@@ -1,10 +1,17 @@
 package main
 
 import (
-	"github.com/g0r13r4/tictactoe/game"
+	"fmt"
+	"os"
+
+	"cloudnautics.com/tictactoe/game"
 )
 
 func main() {
-	game.Loop()
+	_, err := game.Loop()
+	if err != nil {
+		fmt.Println("game crashing")
+		os.Exit(1)
+	}
 
 }

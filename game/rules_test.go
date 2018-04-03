@@ -4,7 +4,7 @@ import "testing"
 
 func TestHorizontalCheck(t *testing.T) {
 	testGame := newGame()
-	testGame.grid = Grid{
+	testGame.grid = &Grid{
 		top: [gridSize]rune{o, o, o},
 		mid: [gridSize]rune{},
 		bot: [gridSize]rune{},
@@ -22,7 +22,7 @@ func TestHorizontalCheck(t *testing.T) {
 
 func TestHorizontalCheckFail(t *testing.T) {
 	testGame := newGame()
-	testGame.grid = Grid{
+	testGame.grid = &Grid{
 		top: [gridSize]rune{o},
 		mid: [gridSize]rune{x},
 		bot: [gridSize]rune{x, x},
@@ -40,7 +40,7 @@ func TestHorizontalCheckFail(t *testing.T) {
 
 func TestVerticalCheck(t *testing.T) {
 	testGame := newGame()
-	testGame.grid = Grid{
+	testGame.grid = &Grid{
 		top: [gridSize]rune{o, x, o},
 		mid: [gridSize]rune{x, x, o},
 		bot: [gridSize]rune{o, x, x},
@@ -58,7 +58,7 @@ func TestVerticalCheck(t *testing.T) {
 
 func TestVerticalCheckFail(t *testing.T) {
 	testGame := newGame()
-	testGame.grid = Grid{
+	testGame.grid = &Grid{
 		top: [gridSize]rune{o, x},
 		mid: [gridSize]rune{x},
 		bot: [gridSize]rune{x, x, o},
@@ -76,7 +76,7 @@ func TestVerticalCheckFail(t *testing.T) {
 
 func TestDiagonalCheck(t *testing.T) {
 	testGame := newGame()
-	testGame.grid = Grid{
+	testGame.grid = &Grid{
 		top: [gridSize]rune{x, x, o},
 		mid: [gridSize]rune{o, x, o},
 		bot: [gridSize]rune{o, x, x},
@@ -94,7 +94,7 @@ func TestDiagonalCheck(t *testing.T) {
 
 func TestDiagonalCheckFail(t *testing.T) {
 	testGame := newGame()
-	testGame.grid = Grid{
+	testGame.grid = &Grid{
 		top: [gridSize]rune{o, x},
 		mid: [gridSize]rune{x, x, o},
 		bot: [gridSize]rune{x, x, o},
